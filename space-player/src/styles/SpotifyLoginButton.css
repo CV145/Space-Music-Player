@@ -1,19 +1,12 @@
 /* SpotifyLoginButton.css */
 
 .spotify-login-button {
-    background-color: #1db954; /* Spotify green color */
-    color: #fff; /* Text color */
-    font-size: 16px; /* Font size */
-    padding: 10px 20px; /* Padding */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Change cursor on hover */
     margin-top: 20px;
     align-self: center;
   }
   
   .spotify-login-button:hover {
-    background-color: #169c4e; /* Darker shade on hover */
+    background-color: #2e3a33; /* Darker shade on hover */
     /* Additional hover styles */
   }
   

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SpotifyLoginButton from './SpotifyLoginButton';
 import '../styles/MusicPlayer.css';
+
 import volumeIcon from '../assets/images/volume-icon.png';
 
 function MusicPlayer()
