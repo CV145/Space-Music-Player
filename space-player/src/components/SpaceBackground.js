@@ -2,8 +2,10 @@
 import React, { useEffect } from 'react';
 import Dot from './Dot'; // Import the Dot component
 import MusicPlayer from './MusicPlayer';
+import SpotifyLoginButton from './SpotifyLoginButton';
 
 function SpaceBackground() {
+
     
     useEffect(() => {
         // This is where you change the document.body.style, which is a side effect.
@@ -25,7 +27,7 @@ function SpaceBackground() {
 
     return <div className="space-background">
         {dotComponents}
-        <MusicPlayer/>
+            <MusicPlayer/>
     </div>;
 }
 

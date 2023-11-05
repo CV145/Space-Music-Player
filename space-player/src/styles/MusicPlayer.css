@@ -39,6 +39,7 @@
   
   .volume-slider {
     width: 100%;
+    margin-right: 25px;
   }
   
   .player-controls {
@@ -66,5 +67,20 @@
   }
   
   .playlist-display {
-    /* Add styles for the playlist display as needed */
+    text-align: center; /* Center the playlist items */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .current-song {
+    font-weight: bold; /* Style the currently playing song differently */
+    color: #0074d9; /* Change the color for emphasis */
   }

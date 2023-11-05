@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import SpotifyLoginButton from './SpotifyLoginButton';
 import '../styles/MusicPlayer.css';
 import volumeIcon from '../assets/images/volume-icon.png';
 
 function MusicPlayer()
 {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [currentSong, setCurrentSong] = useState('Song 1'); //current song state
 
     const togglePlay = () => {
         setIsPlaying(!isPlaying);
@@ -13,6 +15,9 @@ function MusicPlayer()
 
     return (
         <div className="music-player">
+        <div className="playlist-display">
+          <h3>Playlist</h3>
+          </div>
           <div className="player-controls">
             <button className="play-pause-button" onClick={togglePlay}>
               <span className="play-pause-icon">
@@ -24,7 +29,7 @@ function MusicPlayer()
               <input type="range" className="volume-slider" />
             </div>
           </div>
-          <div className="playlist-display">{/* Playlist content goes here */}</div>
+          <SpotifyLoginButton />
         </div>
       );
 }
