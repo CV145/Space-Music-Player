@@ -2,6 +2,8 @@
 import React from 'react';
 import '../styles/SpotifyLoginButton.css';
 import spotifyLogo from '../assets/images/spotify.png';
+import { initiateSpotifyLogin } from './authentication/SpotifyAuth'; 
+
 
 
 
@@ -9,7 +11,7 @@ const SpotifyLoginButton = () => {
 
   const onLoginClick = () => {
     // Redirect to the Spotify authorization page
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=aff230c795e442cebe5c2b5275d10980&redirect_uri=http://localhost:3000/callback&response_type=code&scope=user-read-private`;
+    initiateSpotifyLogin();
   };
 
   return (

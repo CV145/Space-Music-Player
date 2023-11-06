@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SpotifyLoginButton from './SpotifyLoginButton';
 import '../styles/MusicPlayer.css';
 
 import volumeIcon from '../assets/images/volume-icon.png';
 
-function MusicPlayer()
+function MusicPlayer(accessToken)
 {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentSong, setCurrentSong] = useState('Song 1'); //current song state
@@ -12,7 +12,6 @@ function MusicPlayer()
     const togglePlay = () => {
         setIsPlaying(!isPlaying);
     };
-
 
     return (
         <div className="music-player">

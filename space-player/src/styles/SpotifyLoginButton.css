@@ -3,6 +3,7 @@
 .spotify-login-button {
     margin-top: 20px;
     align-self: center;
+    background-color: white;
   }
   
   .spotify-login-button:hover {
