@@ -40,6 +40,31 @@ export const searchTracks = (query) => {
       });
   };
 
+  const fetchRandomTrack = async (accessToken) => {
+    
+    // Determine the total number of tracks in the catalog (you can get this from the API as well)
+    const totalTracks = 1000000; // Replace with the actual count
+  
+    // Generate a random index
+    const randomIndex = Math.floor(Math.random() * totalTracks);
+  
+    // Make the API request
+    const response = await fetch(`https://api.spotify.com/v1/tracks/${randomIndex}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+  
+    if (response.status === 200) {
+      const data = await response.json();
+      const trackId = data.id;
+      return trackId;
+    } else {
+      console.error('Failed to fetch a random track.');
+      return null;
+    }
+  };
 
   // Function to initialize the Spotify SDK
 export const initializeSpotifySDK = (accessToken) => {

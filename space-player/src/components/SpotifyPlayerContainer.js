@@ -1,6 +1,6 @@
 // SpotifyPlayerContainer.js
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { initializeSpotifySDK } from '../services/spotifyService';
 import SpaceBackground from './SpaceBackground';
 import {getAccessTokenFromRedirectURI} from './authentication/SpotifyAuth'
@@ -8,8 +8,25 @@ import MusicPlayer from './MusicPlayer';
 import Search from './Search';
 
 function SpotifyPlayerContainer() {
+    const [accessToken, setAccessToken] = useState(null);
+
+
+    // Initialize the Spotify SDK when your application starts
+window.onSpotifyWebPlaybackSDKReady = () => {
+  const token = '[Your access token]';
+  const player = new window.Spotify.Player({
+    name: 'Web Playback SDK Quick Start Player',
+    getOAuthToken: (cb) => {
+      cb(token);
+    },
+    volume: 0.5
+  });
+}
+
+    //Called when components renders or re-renders
   useEffect(() => {
     const accessToken = getAccessTokenFromRedirectURI();
+    setAccessToken(accessToken);
 
     initializeSpotifySDK(accessToken)
       .then((player) => {
@@ -22,8 +39,8 @@ function SpotifyPlayerContainer() {
 
   return (
     <div>
-      <MusicPlayer/>
-      <Search/>
+      <MusicPlayer accessToken={accessToken}/>
+      <Search accessToken={accessToken}/>
     </div>
   );
 }
