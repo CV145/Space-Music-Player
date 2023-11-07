@@ -3,8 +3,9 @@ import SpotifyLoginButton from './SpotifyLoginButton';
 import '../styles/MusicPlayer.css';
 
 import volumeIcon from '../assets/images/volume-icon.png';
+import Search from './Search';
 
-function MusicPlayer(accessToken)
+function MusicPlayer()
 {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentSong, setCurrentSong] = useState('Song 1'); //current song state

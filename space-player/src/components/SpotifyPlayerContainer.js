@@ -3,10 +3,13 @@
 import React, { useEffect } from 'react';
 import { initializeSpotifySDK } from '../services/spotifyService';
 import SpaceBackground from './SpaceBackground';
+import {getAccessTokenFromRedirectURI} from './authentication/SpotifyAuth'
+import MusicPlayer from './MusicPlayer';
+import Search from './Search';
 
 function SpotifyPlayerContainer() {
   useEffect(() => {
-    const accessToken = '[Your Spotify Access Token]';
+    const accessToken = getAccessTokenFromRedirectURI();
 
     initializeSpotifySDK(accessToken)
       .then((player) => {
@@ -18,9 +21,9 @@ function SpotifyPlayerContainer() {
   }, []);
 
   return (
-    // Render your entire application here, including the MusicPlayer component
     <div>
-      <SpaceBackground/>
+      <MusicPlayer/>
+      <Search/>
     </div>
   );
 }

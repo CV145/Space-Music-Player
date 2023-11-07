@@ -11,12 +11,32 @@ export const authenticateWithSpotify = (accessToken) => {
     spotifyApi.setAccessToken(accessToken);
 };
 
+/*
+Returns a object with info about the tracks matching a search query. Tracks is an array of track objects and those contain the track_id
+*/
 export const searchTracks = (query) => {
     return spotifyApi.searchTracks(query);
   };
   
-  export const playTrack = (trackId) => {
-    // Implement logic to play the selected track using the Spotify API
+  export const playTrack = (trackId, accessToken) => {
+    const url = 'https://api.spotify.com/v1/me/player/play';
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+    const data = {
+      uris: [`spotify:track:${trackId}`], // Convert the trackId to a Spotify URI
+    };
+  
+    axios
+      .put(url, data, { headers })
+      .then((response) => {
+        // Playback started successfully
+        console.log('Track playback started:', response);
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error('Error starting playback:', error);
+      });
   };
 
 

@@ -18,7 +18,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <SpotifyPlayerContainer/>
+    <SpaceBackground/>
   </React.StrictMode>,
   document.getElementById('root')
 );

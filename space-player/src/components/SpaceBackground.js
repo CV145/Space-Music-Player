@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Dot from './Dot'; // Import the Dot component
 import MusicPlayer from './MusicPlayer';
 import SpotifyLoginButton from './SpotifyLoginButton';
+import SpotifyPlayerContainer from './SpotifyPlayerContainer';
 
 function SpaceBackground() {
 
@@ -27,7 +28,7 @@ function SpaceBackground() {
 
     return <div className="space-background">
         {dotComponents}
-            <MusicPlayer/>
+            <SpotifyPlayerContainer/>
     </div>;
 }
 
