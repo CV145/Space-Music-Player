@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import SpotifyLoginButton from './SpotifyLoginButton';
-import {useDispatch} from 'react-redux';
-import { setTrackId, setAccessToken } from '../actions/actions';
 import '../styles/MusicPlayer.css';
 
 import volumeIcon from '../assets/images/volume-icon.png';
 import Search from './Search';
 
-function MusicPlayer(accessToken)
+function MusicPlayer()
 {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [trackId, setCurrentSong] = useState(''); //current song state
-
-    // Dispatch actions to set track ID and access token
-    //dispatch(setTrackId(trackId));
-    //dispatch(setAccessToken(accessToken));
-
+    const [currentSong, setCurrentSong] = useState('Song 1'); //current song state
 
     const togglePlay = () => {
         setIsPlaying(!isPlaying);

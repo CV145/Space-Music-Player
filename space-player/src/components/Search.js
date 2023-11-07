@@ -4,7 +4,6 @@ import '../styles/Search.css'; // Import your CSS file
 function Search() {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
- 
 
   useEffect(() => {
     if (query.length > 0) {

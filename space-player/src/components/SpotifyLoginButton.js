@@ -7,20 +7,14 @@ import { getAccessTokenFromRedirectURI, initiateSpotifyLogin } from './authentic
 
 
 
-
-const SpotifyLoginButton = ({onAccessTokenReceived}) => {
+const SpotifyLoginButton = () => {
 
   const onLoginClick = () => {
     // Redirect to the Spotify authorization page
     initiateSpotifyLogin();
 
     //Get and store access token 
-    const token = getAccessTokenFromRedirectURI();
-
-    if (token) {
-      // Pass the access token up to the parent component
-      onAccessTokenReceived(token);
-    }
+    getAccessTokenFromRedirectURI();
   };
 
   return (
