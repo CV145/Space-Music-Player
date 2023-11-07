@@ -2,7 +2,7 @@
 import React from 'react';
 import '../styles/SpotifyLoginButton.css';
 import spotifyLogo from '../assets/images/spotify.png';
-import { initiateSpotifyLogin } from './authentication/SpotifyAuth'; 
+import { getAccessTokenFromRedirectURI, initiateSpotifyLogin } from './authentication/SpotifyAuth'; 
 
 
 
@@ -12,6 +12,9 @@ const SpotifyLoginButton = () => {
   const onLoginClick = () => {
     // Redirect to the Spotify authorization page
     initiateSpotifyLogin();
+
+    //Get and store access token 
+    getAccessTokenFromRedirectURI();
   };
 
   return (

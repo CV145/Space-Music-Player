@@ -1,4 +1,5 @@
 import SpotifyWebApi from 'spotify-web-api-js';
+import axios from 'axios';
 
 /*
  This module can include functions to make API requests, such as fetching user playlists, searching for tracks, and controlling playback.
